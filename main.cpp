@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
+
 int i=0;
 int alvo;
 int alvoBinario;
@@ -11,7 +12,6 @@ int arr[1000];
 int c;
 int b;
 int f;
-
 
 int gerador_de_valores(){	
 	while(i<1000){
@@ -36,18 +36,16 @@ int Busca_Binaria(){
   gerador_de_valores();
   
 int meio = -1;
-int min=0;
+int min=1;
 int max=1000;
-  
+
+if(alvo > 1000){
+	b = 10;
+ return b;
+}else{
+	
   while( meio != alvo){
-
-    
-    printf("meio= %d\n", meio);
-    printf("alvo= %d\n", alvo);
-    printf("min= %d\n", min);
-    printf("max= %d\n", max);
-
-    
+ 
     meio = (min + max)/2;
     b++;   
     
@@ -64,33 +62,45 @@ int max=1000;
     }    
   }	
   return meio;
+	}
 }
-
+  
 int Busca_de_dados(){
-  f++;
-	return -1;
+	
+int freq[i];
+	for (i = 0; i < arr[1000]; i++){
+	freq[arr[1000]]++;
+}
+while(freq[i] != alvo){
+	f++;
 }
 
+	if(freq[alvo] > 0){
+		return 1;	
+	}else{
+		return 0;
+	}
+	
+	
+}
 
 int main(){
-  
-  /*for(int i = 0; i < 1000; i++){
-    arr[i]=i;
-  }*/
 	cout <<  "Digite qual o seu alvo: ";
 	cin >>alvo;
-  Busca_Binaria();  
+  	Busca_Binaria();  
+  	Busca_de_dados();
+  	
 	if(Busca_linear() == alvo){
-		cout << "1) Alvo Encontrado (alvo = " << alvo << "):" << endl;
+		cout << "Alvo Encontrado (alvo = " << alvo << "):" << endl;
 		cout << "Busca Linear: " << c << " Comaparacoes" << endl;
 		cout << "Busca Binaria: " << b << " Comaparacoes" << endl;
 		cout << "Busca de frequencia: " << f << " Comaparacoes" << endl;
 	}else{
-		cout << "1) Alvo Nao Encontrado (alvo = " << alvo << "):" << endl;
+		cout << "Alvo Nao Encontrado (alvo = " << alvo << "):" << endl;
 		cout << "Busca Linear: " << c << " Comaparacoes" << endl;
 		cout << "Busca Binaria: " << b << " Comaparacoes" << endl;
 		cout << "Busca de frequencia: " << f << " Comaparacoes" << endl;
 	}
-	
+		
     return 0;
 }
